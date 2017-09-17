@@ -3,9 +3,9 @@ from celery import Celery
 from django.conf import settings
 
 # set the default Django settings module for the 'celery' program.
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'myshop.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'kextech_site.settings')
 
-app = Celery('myshop')
+app = Celery('kextech_site')
 
 app.config_from_object('django.conf:settings')
 app.autodiscover_tasks(lambda: settings.INSTALLED_APPS)
