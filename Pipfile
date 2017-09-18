@@ -1,0 +1,23 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+[packages]
+
+amqp = "==2.2.2"
+billiard = "==3.5.0.3"
+celery = "==4.1.0"
+certifi = "==2017.7.27.1"
+chardet = "==3.0.4"
+django = "==1.11.5"
+django-paypal = "==0.4.1"
+gunicorn = "==19.7.1"
+idna = "==2.6"
+kombu = "==4.1.0"
+paypal = "==1.2.5"
+pytz = "==2017.2"
+requests = "*"
+urllib3 = "==1.22"
+vine = "==1.1.4"
+whitenoise = "*"
+
+
