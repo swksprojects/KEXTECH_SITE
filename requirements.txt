@@ -8,7 +8,9 @@ django-paypal==0.4.1
 gunicorn==19.7.1
 idna==2.6
 kombu==4.1.0
+olefile==0.44
 paypal==1.2.5
+Pillow==4.2.1
 pytz==2017.2
 requests==2.18.4
 six==1.11.0
