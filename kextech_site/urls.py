@@ -8,6 +8,7 @@ import orders.urls
 import payment.urls
 import paypal.standard.ipn.urls
 import blog.urls
+import home.urls
 
 
 urlpatterns = [
@@ -17,7 +18,8 @@ urlpatterns = [
     url(r'paypal/', include(paypal.standard.ipn.urls)),
     url(r'payment', include(payment.urls, namespace='payment')),
     url(r'^blog/', include(blog.urls, namespace='blog', app_name='blog')),
-    url(r'^', include(shop.urls, namespace='shop')),
+    url(r'^products/', include(shop.urls, namespace='shop')),
+    url(r'^', include(home.urls, namespace='home')),
 ]
 
 if settings.DEBUG:

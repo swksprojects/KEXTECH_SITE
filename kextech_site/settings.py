@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'paypal.standard.ipn',
     'payment.apps.PaymentConfig',
     'blog.apps.BlogConfig',
+    'home.apps.HomeConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
