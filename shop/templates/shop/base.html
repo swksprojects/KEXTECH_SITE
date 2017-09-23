@@ -12,6 +12,13 @@
         <a href="/" class="logo">KEXTECH</a>
     </div>
     <div id="subheader">
+        <ul>
+            <li><a href="{% url 'home:home' %}">Home</a></li>
+            <li><a href="{% url 'home:about' %}">About Us</a></li>
+            <li><a href="{% url 'blog:post_list' %}">Blog</a></li>
+            <li><a href="{% url 'shop:product_list' %}">Events</a></li>
+            <li><a href="{% url 'home:investors' %}">Investors</a></li>
+        </ul>
         <div class="cart">
             {% with total_items=cart|length %}
                 {% if cart|length > 0 %}

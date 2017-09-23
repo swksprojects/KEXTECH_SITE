@@ -7,3 +7,7 @@ def home(request):
 
 def investors(request):
     return render(request, "home/investors.html")
+
+
+def about(request):
+    return render(request, "home/about.html")
