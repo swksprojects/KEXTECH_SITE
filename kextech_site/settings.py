@@ -155,7 +155,7 @@ EMAIL_PORT = 25
 # Django Paypal Settings
 
 PAYPAL_RECEIVER_EMAIL = 'KEXTECH@GMX.COM'
-PAYPAL_TEST = True
+PAYPAL_TEST = False
 
 
 import django.contrib.admin
