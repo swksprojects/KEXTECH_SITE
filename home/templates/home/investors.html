@@ -1,8 +1,8 @@
-{% extends "shop/base.html" %}
+{% extends "shop/inline_base.html" %}
 {% load static %}
 
 {% block title %}KexTech Investors{% endblock %}
 
 {% block content %}
-<p>This will be the investor relations</p>
+{% include "home/includes/investors.html" %}
 {% endblock %}

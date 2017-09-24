@@ -1,7 +1,10 @@
-{% extends "shop/base.html" %}
+{% extends "shop/inline_base.html" %}
 {% load static %}
 
 
 {% block content %}
 <p>This will be the homepage</p>
+{% include "home/includes/about.html" %}
+{% include "home/includes/investors.html" %}
 {% endblock %}
+
