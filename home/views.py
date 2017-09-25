@@ -11,3 +11,7 @@ def investors(request):
 
 def about(request):
     return render(request, "home/about.html")
+
+
+def partnerships(request):
+    return render(request, "home/partnerships.html")

@@ -1,7 +1,16 @@
 @import url(http://fonts.googleapis.com/css?family=Ubuntu);
 
+html {
+    margin:0;
+    height: 100%;
+ }
+
 body {
     background: white url("../img/background.jpg");
+    background-size: cover;
+    margin:0; height: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 ul.errorlist {
@@ -80,6 +89,8 @@ h1, h2, h3, h4, h5 , h6 {
 .sidebar-nav li a:hover{
     background: #dedfe5;
 }
+
+
 
 /* old stuff that was used for development purposes.
 

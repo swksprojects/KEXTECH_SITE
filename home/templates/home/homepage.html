@@ -3,7 +3,66 @@
 
 
 {% block content %}
-<p>This will be the homepage</p>
+<center><h1>Learn skills targeted to your career.</h1></center>
+
+
+<h2 style="padding:20px"> Autumn Term </h2>
+
+<div class="media" style="padding:50px">
+      <a class="media-left media-top" href="#">
+        <img class="pull-left" src="{% static 'img/intro_to_python.png' %}" width="200" height="200">
+      </a>
+      <div class="media-body">
+        <h2 class="media-heading">LSE Applicable Mathematics - Intro to Python For Data Science</h2>
+        <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+        <p>Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+        <a href="{% url 'shop:product_list' %}"><h5>Browse Events</h5></a>
+      </div>
+</div>
+
+
+<div class="media" style="padding:50px">
+      <a class="media-left media-top" href="#">
+        <img class="pull-left" src="{% static 'img/m_a_image.png' %}" width="200" height="200">
+      </a>
+      <div class="media-body">
+        <h2 class="media-heading">LSE Applicable Mathematics - Mergers & Acqusitions</h2>
+        <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+        <p>Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+        <a href="{% url 'shop:product_list' %}"><h5>Browse Events</h5></a>
+      </div>
+</div>
+
+
+<div class="media" style="padding:50px">
+      <a class="media-left media-top" href="#">
+        <img class="pull-left" src="{% static 'img/fin4nonfin.png' %}" width="200" height="200">
+      </a>
+      <div class="media-body">
+        <h2 class="media-heading">UCL Financial Industry Series - Finance For Non-Finance Students</h2>
+        <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+        <p>Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+        <a href="{% url 'shop:product_list' %}"><h5>Browse Events</h5></a>
+      </div>
+</div>
+
+<h2 style="padding:20px"> Autumn Term </h2>
+
+<div class="media" style="padding:50px">
+      <a class="media-left media-top" href="#">
+        <img class="pull-left" src="{% static 'img/python_for_machine_learning.png' %}" width="200" height="200">
+      </a>
+      <div class="media-body">
+        <h2 class="media-heading">LSE Applicable Mathematics - Python For Machine Learning</h2>
+        <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+        <p>Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+        <a href="{% url 'shop:product_list' %}"><h5>Browse Events</h5></a>
+      </div>
+</div>
+
+
+
+
 {% include "home/includes/about.html" %}
 {% include "home/includes/investors.html" %}
 {% endblock %}
