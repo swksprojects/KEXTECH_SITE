@@ -14,3 +14,4 @@ def order_created(order_id):
                                                                                                order.id)
     mail_sent = send_mail(subject, message, 'kextech@gmx.com', [order.email])
     return mail_sent
+
