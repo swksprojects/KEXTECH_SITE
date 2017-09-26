@@ -7,8 +7,8 @@
 
 {% block content %}
 
-
     <div id="wrapper">
+
 
         <div id="category_sidebar">
             <h3>Categories</h3>
@@ -24,6 +24,8 @@
             </ul>
         </div>
 
+
+
         <div id="product_main" class="product-list">
             <div class="container-fluid">
                 <h1>{% if category %}{{ category.name }}{% else %}All Events{% endif %}</h1>
@@ -38,6 +40,7 @@
                 {% endfor %}
             </div>
         </div>
+
 
     </div>
 

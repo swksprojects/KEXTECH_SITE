@@ -6,18 +6,19 @@
 {% endblock %}
 
 {% block content %}
-    <div class="product-detail">
+    <div class="media" style="padding:50px">
         <h1><a href="{{ product.category.get_absolute_url }}">{{ product.category }}</a></h1>
         <h2>{{ product.name }}</h2>
-        <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}">
-        <div class="order-info">
+        <img class="pull-left" src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}" height="400" width="400">
+        <div class="media-body">{{ product.description|linebreaks }}</div>
+    </div>
+    <div class="order-info">
             <p class="price">£{{ product.price }}</p>
             <form action="{% url 'cart:cart_add' product.id %}" method="post">
                 {{ cart_product_form }}
                 {% csrf_token %}
                 <input type="submit" value="Add to cart">
             </form>
-        </div>
-        <div>{{ product.description|linebreaks }}</div>
     </div>
 {% endblock %}
+
