@@ -95,17 +95,22 @@ WSGI_APPLICATION = 'kextech_site.wsgi.application'
 # }
 
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'kextechdb',
-        'USER': 'postgres',
-        'PASSWORD': 'K/Xdb=dbt3K',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'kextechdb',
+#         'USER': 'postgres',
+#         'PASSWORD': 'K/Xdb=dbt3K',
+#         'HOST': '127.0.0.1',
+#         'PORT': '5432',
+#     }
+# }
 
+
+
+import dj_database_url
+
+DATABASES = {"default": dj_database_url.config()}
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
@@ -171,6 +176,5 @@ PAYPAL_TEST = False
 
 
 import django.contrib.admin
-
 django.contrib.admin.site.site_header = 'KEXTECH ADMIN'
 
