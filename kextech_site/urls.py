@@ -20,8 +20,7 @@ urlpatterns = [
     url(r'^blog/', include(blog.urls, namespace='blog', app_name='blog')),
     url(r'^products/', include(shop.urls, namespace='shop')),
     url(r'^', include(home.urls, namespace='home')),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL,
-                          document_root=settings.MEDIA_ROOT)
+# if settings.DEBUG:
+#     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
