@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'payment.apps.PaymentConfig',
     'blog.apps.BlogConfig',
     'home.apps.HomeConfig',
-    'courses.apps.CoursesConfig'
+    'courses.apps.CoursesConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
