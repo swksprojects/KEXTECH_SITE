@@ -9,9 +9,12 @@ import payment.urls
 import paypal.standard.ipn.urls
 import blog.urls
 import home.urls
+from django.contrib.auth import views as auth_views
 
 
 urlpatterns = [
+    url(r'^accounts/login/$', auth_views.login, name='login'),
+    url(r'^accounts/logout/$', auth_views.logout, name='logout'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^cart/', include(cart.urls, namespace='cart')),
     url(r'^orders/', include(orders.urls, namespace='orders')),
@@ -21,6 +24,3 @@ urlpatterns = [
     url(r'^products/', include(shop.urls, namespace='shop')),
     url(r'^', include(home.urls, namespace='home')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
-# if settings.DEBUG:
-#     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
