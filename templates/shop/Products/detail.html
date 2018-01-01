@@ -1,0 +1,29 @@
+{% extends "shop/inline_base.html" %}
+{% load static %}
+
+{% block title %}
+    {{ product.name }}
+{% endblock %}
+
+{% block content %}
+
+    <div class="media" style="padding:50px">
+        <h1><a href="{{ product.category.get_absolute_url }}">{{ product.category }}</a></h1>
+        <h2>{{ product.name }}</h2>
+
+        <div class="order-info">
+        <form action="{% url 'cart:cart_add' product.id %}" method="post">
+            <p class="price">£{{ product.price }}</p>
+            {{ cart_product_form }}
+            {% csrf_token %}
+            <input type="submit" value="Add to cart">
+        </form>
+        </div>
+
+        <img class="pull-left" src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}" height="400" width="400">
+        <br><br><br><br>
+        <div style="font-family: 'Ubuntu', cursive" class="media-body">{{ product.description|linebreaks }}</div>
+    </div>
+
+{% endblock %}
+
