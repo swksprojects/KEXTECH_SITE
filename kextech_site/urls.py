@@ -10,6 +10,8 @@ import paypal.standard.ipn.urls
 import blog.urls
 import home.urls
 import courses.urls
+import students.urls
+from courses.views import CourseListView
 from django.contrib.auth import views as auth_views
 
 
@@ -18,6 +20,8 @@ urlpatterns = [
     url(r'^accounts/logout/$', auth_views.logout, name='logout'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^course/', include(courses.urls)),
+    url(r'^course-list/', CourseListView.as_view(), name='course_list'),
+    url(r'^students/', include(students.urls)),
     url(r'^cart/', include(cart.urls, namespace='cart')),
     url(r'^orders/', include(orders.urls, namespace='orders')),
     url(r'paypal/', include(paypal.standard.ipn.urls)),
