@@ -1,0 +1,10 @@
+{% extends "shop/inline_base.html" %}
+{% load static %}
+
+{% block title %}KexTech Instructors{% endblock %}
+
+{% block content %}
+If you are interested in using the KexTech platform to create your own online-course or event, we would love to hear from you. Please contact Alexandra at kextech@gmx.com.<br>
+If you are already set up as an instructor please proceed to your <a href="{% url 'manage_course_list' %}">course management system</a>.
+{% include "home/includes/about.html" %}
+{% endblock %}

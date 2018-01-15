@@ -15,3 +15,7 @@ def about(request):
 
 def partnerships(request):
     return render(request, "home/partnerships.html")
+
+
+def become_instructor(request):
+    return render(request, "home/become_instructor.html")

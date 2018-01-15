@@ -4,7 +4,6 @@ from django.contrib.contenttypes.fields import GenericForeignKey
 from django.contrib.auth.models import User
 from .fields import OrderField
 from django.template.loader import render_to_string
-from django.utils.safestring import mark_safe
 
 
 class Subject(models.Model):

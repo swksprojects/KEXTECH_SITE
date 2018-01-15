@@ -31,12 +31,24 @@
                     <li {% if request.resolver_match.url_name == 'home' %}class="active"{% endif %}><a href="{% url 'home:home' %}">Home</a></li>
                     <li {% if request.resolver_match.url_name == 'about' %}class="active"{% endif %}><a href="{% url 'home:about' %}">About</a></li>
                     <li {% if request.resolver_match.url_name == 'post_list' %}class="active"{% endif %}><a href="{% url 'blog:post_list' %}">Blog</a></li>
-                    <li {% if request.resolver_match.url_name == 'product_list' %}class="active"{% endif %}><a href="{% url 'shop:product_list' %}">Events</a></li>
+                    <li {% if request.resolver_match.url_name == 'product_list' %}class="active"{% endif %}><a href="{% url 'shop:product_list' %}">Products & Events</a></li>
                     <li {% if request.resolver_match.url_name == 'course_list' %}class="active"{% endif %}><a href="{% url 'course_list' %}">Online Courses</a></li>
+                    <li {% if request.resolver_match.url_name == 'become_instructor' %}class="active"{% endif %}><a href="{% url 'home:become_instructor' %}">Create Your Own Course</a></li>
                     <li {% if request.resolver_match.url_name == 'partnerships' %}class="active"{% endif %}><a href="{% url 'home:partnerships' %}">Partnerships</a></li>
                     <li {% if request.resolver_match.url_name == 'investors' %}class="active"{% endif %}><a href="{% url 'home:investors' %}">Investors</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
+                    {% if user.is_authenticated %}
+                        <li><a href="{% url 'course_list' %}">welcome {{ user.username }}</a></li>
+                        <li {% if request.resolver_match.url_name == 'logout' %}class="active"{% endif %}>
+                            <a href="{% url 'logout' %}">
+                                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp; Logout
+                            </a>
+                        </li>
+                    {% else %}
+                         <li {% if request.resolver_match.url_name == 'student_registration' %}class="active"{% endif %}><a href="{% url 'students:student_registration' %}">Sign Up</a></li>
+                         <li {% if request.resolver_match.url_name == 'login' %}class="active"{% endif %}><a href="{% url 'login' %}">Login</a></li>
+                    {% endif %}
                      <li>
                         {% with total_items=cart|length %}
                             {% if cart|length > 0 %}
