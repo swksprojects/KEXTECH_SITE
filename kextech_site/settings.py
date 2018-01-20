@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '^_u100dcl8np4ic&yu#vay^^qodw9gi93^jey&jk94q!9h)-1l'
+SECRET_KEY = ''
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -194,7 +194,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmx.com'
 EMAIL_HOST_USER = 'KEXTECH@GMX.COM'
-EMAIL_HOST_PASSWORD = 'K/Xc=ct3K'
+EMAIL_HOST_PASSWORD = ''
 EMAIL_PORT = 25
 
 # Django Paypal Settings
