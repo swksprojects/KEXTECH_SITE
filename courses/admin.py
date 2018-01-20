@@ -14,8 +14,18 @@ class ModuleInLine(admin.StackedInline):
 
 @admin.register(Course)
 class CourseAdmin(admin.ModelAdmin):
-    list_display = ['title', 'subject', 'created']
+    list_display = ['title', 'subject', 'owner', 'available', 'slug', 'created']
     list_filter = ['created', 'subject']
-    search_fields = ['title', 'overview']
+    search_fields = ['title', 'overview', 'availableq']
+    list_editable = ['available']
     prepopulated_fields = {'slug': ('title',)}
     inlines = [ModuleInLine]
+
+    # owner = models.ForeignKey(User, related_name='course_created')
+    # subject = models.ForeignKey(Subject, related_name='courses')
+    # title = models.CharField(max_length=200)
+    # slug = models.SlugField(max_length=200, unique=True)
+    # overview = models.TextField()
+    # created = models.DateTimeField(auto_now_add=True)
+    # students = models.ManyToManyField(User, related_name='courses_enrolled', blank=True)
+    #available = models.BooleanField(default=True)

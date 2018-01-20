@@ -25,6 +25,7 @@ class Course(models.Model):
     overview = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
     students = models.ManyToManyField(User, related_name='courses_enrolled', blank=True)
+    available = models.BooleanField(default=False)
 
     class Meta:
         ordering = ('-created',)
