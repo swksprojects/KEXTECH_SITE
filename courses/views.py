@@ -12,6 +12,7 @@ from braces.views import LoginRequiredMixin, PermissionRequiredMixin, CsrfExempt
 from .forms import ModuleFormSet
 from .models import Subject, Course, Module, Content
 from students.forms import CourseEnrollForm
+from django.contrib.auth.models import User
 
 
 class OwnerMixin(object):
@@ -192,5 +193,13 @@ class CourseDetailView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super(CourseDetailView, self).get_context_data(**kwargs)
-        context['enroll_form'] = CourseEnrollForm(initial={'course':self.object})
+        context['enroll_form'] = CourseEnrollForm(initial={'course': self.object})
         return context
+
+    def get(self, request, *args, **kwargs):
+        print(request.user.username)
+        self.object = self.get_object()
+        context = self.get_context_data(object=self.object)
+        is_enrolled = request.user in User.objects.filter(courses_enrolled=context['enroll_form'].initial["course"].id)
+        context["is_enrolled"] = is_enrolled
+        return self.render_to_response(context)

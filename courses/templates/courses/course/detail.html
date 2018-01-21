@@ -18,11 +18,20 @@
             </p>
             {{ object.overview|linebreaks }}
             {% if request.user.is_authenticated %}
-                <form action="{% url 'students:student_enroll_course' %}" method="post">
-                    {{ enroll_form }}
-                    {% csrf_token %}
-                    <input type="submit" class="button" value="Enroll now">
-                </form>
+                {% if is_enrolled %}
+                    You are already enrolled in this course.
+                    <form action="{% url 'students:student_enroll_course' %}" method="post">
+                        {{ enroll_form }}
+                        {% csrf_token %}
+                        <input type="submit" class="button" value="Go to course">
+                    </form>
+                {% else %}
+                    <form action="{% url 'students:student_enroll_course' %}" method="post">
+                        {{ enroll_form }}
+                        {% csrf_token %}
+                        <input type="submit" class="button" value="Enroll now">
+                    </form>
+                {% endif %}
             {% else %}
                 <a href="{% url 'students:student_registration' %}" class="button">
                     Register to enroll
