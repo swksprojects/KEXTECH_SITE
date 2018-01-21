@@ -5,10 +5,16 @@ from .cart import Cart
 from .forms import CartAddProductForm
 
 
+def authentication_required(request):
+    return render(request, 'cart/authentication_required.html')
+
+
 @require_POST
 def cart_add(request, product_id):
     cart = Cart(request)
     product = get_object_or_404(Product, id=product_id)
+    if product.authentication_required and not request.user.is_authenticated():
+        return authentication_required(request)
     form = CartAddProductForm(request.POST)
     if form.is_valid():
         cd = form.cleaned_data

@@ -1,0 +1,10 @@
+{% extends "shop/inline_base.html" %}
+{% load static %}
+
+{% block title %}
+    Login Required
+{% endblock %}
+
+{% block content %}
+    <h1>Please <a href="{% url 'login' %}">log-in</a> or <a href="{% url 'students:student_registration' %}">sign-up</a> to purchase this product.</h1>
+{% endblock %}
