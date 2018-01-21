@@ -14,10 +14,10 @@ class ModuleInLine(admin.StackedInline):
 
 @admin.register(Course)
 class CourseAdmin(admin.ModelAdmin):
-    list_display = ['id', 'title', 'subject', 'owner', 'available', 'slug', 'created']
+    list_display = ['id', 'product_id', 'title', 'subject', 'owner', 'available', 'slug', 'created']
     list_filter = ['created', 'subject']
     search_fields = ['title', 'overview', 'available']
-    list_editable = ['available']
+    list_editable = ['available', 'product_id']
     prepopulated_fields = {'slug': ('title',)}
     inlines = [ModuleInLine]
     filter_horizontal = ('students',)

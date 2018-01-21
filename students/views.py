@@ -29,11 +29,15 @@ class StudentEnrollCourseView(LoginRequiredMixin, FormView):
 
     def form_valid(self, form):
         self.course = form.cleaned_data['course']
-        self.course.students.add(self.request.user)
+        if self.course.product_id is None:
+            self.course.students.add(self.request.user)
         return super(StudentEnrollCourseView, self).form_valid(form)
 
     def get_success_url(self):
-        return reverse_lazy('students:student_course_detail', args=[self.course.id])
+        if self.course.product_id is None:
+            return reverse_lazy('students:student_course_detail', args=[self.course.id])
+        else:
+            return reverse_lazy('shop:product_detail', args=[self.course.product_id, self.course.slug])
 
 
 class StudentCourseListView(LoginRequiredMixin, ListView):

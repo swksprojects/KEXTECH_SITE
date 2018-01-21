@@ -26,6 +26,7 @@ class Course(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     students = models.ManyToManyField(User, related_name='courses_enrolled', blank=True)
     available = models.BooleanField(default=False)
+    product_id = models.PositiveIntegerField(blank=True, null=True)
 
     class Meta:
         ordering = ('-created',)
