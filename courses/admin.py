@@ -16,10 +16,11 @@ class ModuleInLine(admin.StackedInline):
 class CourseAdmin(admin.ModelAdmin):
     list_display = ['title', 'subject', 'owner', 'available', 'slug', 'created']
     list_filter = ['created', 'subject']
-    search_fields = ['title', 'overview', 'availableq']
+    search_fields = ['title', 'overview', 'available']
     list_editable = ['available']
     prepopulated_fields = {'slug': ('title',)}
     inlines = [ModuleInLine]
+    filter_horizontal = ('students',)
 
     # owner = models.ForeignKey(User, related_name='course_created')
     # subject = models.ForeignKey(Subject, related_name='courses')
