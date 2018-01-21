@@ -176,7 +176,14 @@ class CourseListView(TemplateResponseMixin, View):
             if not courses:
                 courses = all_courses
                 cache.set('all_courses', courses)
-        return self.render_to_response({'subjects': subjects, 'subject': subject, 'courses': courses})
+        courses_to_display = []
+        for course in courses:
+            if not course.available:
+                if request.user.is_superuser or course.owner == request.user:
+                    courses_to_display.append(course)
+            else:
+                courses_to_display.append(course)
+        return self.render_to_response({'subjects': subjects, 'subject': subject, 'courses': courses_to_display})
 
 
 class CourseDetailView(DetailView):
