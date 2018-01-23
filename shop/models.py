@@ -30,6 +30,7 @@ class Product(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     authentication_required = models.BooleanField(default=True)
+    online_course_dispatch = models.BooleanField(default=True)
 
     class Meta:
         ordering = ('-created',)

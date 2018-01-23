@@ -3,6 +3,7 @@ from paypal.standard.models import ST_PP_COMPLETED
 from paypal.standard.ipn.signals import valid_ipn_received
 from orders.models import Order
 from .tasks import got_payment
+from orders.dispatch import OrderDispatcher
 
 
 def payment_notification(sender, **kwargs):
@@ -14,6 +15,9 @@ def payment_notification(sender, **kwargs):
         # mark the order as paid
         order.paid = True
         order.save()
+
+        dispatcher = OrderDispatcher()
+        dispatcher.dispatch(order)
 
         got_payment.delay(order.id)
 
