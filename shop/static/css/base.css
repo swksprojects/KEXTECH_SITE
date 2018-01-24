@@ -5,6 +5,7 @@ html {
     height: 100%;
  }
 
+
 body {
     background: white url("../img/background.jpg");
     background-size: cover;
@@ -12,6 +13,7 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+
 
 ul.errorlist {
     padding-left: 0;
@@ -680,10 +682,10 @@ input, select, textarea {
     border-bottom:3px solid #ccc;
     padding:8px 12px;
     font-size:16px;
-    font-family:'Roboto', sans-serif;
+    font-family:'Ubuntu', sans-serif;
     float:left;
     clear:both;
-    width:300px;
+    width:200px;
 }
 
 textarea {
@@ -691,7 +693,7 @@ textarea {
 }
 
 select {
-    width:324px;
+    width:200px;
 }
 
 input[type=submit], a.button {
